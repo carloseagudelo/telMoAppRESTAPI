@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootstrap.min";
+@import "owl.carousel";
+@import "owl.theme";
+@import "owl.transitions";
+@import "lightbox";
+@import "style";
+@import "animate";
+@import "main";
