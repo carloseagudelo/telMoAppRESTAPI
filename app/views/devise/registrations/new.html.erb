@@ -1,7 +1,17 @@
-<h2>Sign up</h2>
+<h2>Registrate en nuestra platafotma y lanza tu negocio a un mundo de probabilidades</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :Nombre_motel %><br />
+    <%= f.text_field :name%>
+  </div> 
+
+  <div class="field">
+    <%= f.label :Descripcion_motel %><br />
+    <%= f.text_field :description %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -9,7 +19,22 @@
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :Video_descripcion_motel %><br />
+    <%= f.text_field :URL_Video %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Pagina_web_motel %><br />
+    <%= f.text_field :URL_WebPage%>
+  </div>
+
+  <div class="field">
+    <%= f.label :Direccion %><br />
+    <%= f.text_field :addres %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Contraseña %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -17,12 +42,17 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :Confirmar_contraseña %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :Imagen_logo %><br />
+    <%= f.file_field :logo %>
+  </div>
+
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Registarse" %>
   </div>
 <% end %>
 
