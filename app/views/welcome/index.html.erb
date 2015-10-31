@@ -27,9 +27,13 @@
                 </div>
                 <div class="social-media hidden-sm hidden-xs">
                     <ul class="nav navbar-nav">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <% if user_signed_in? %>
+                            <li><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete, :class=>"page-scroll"%></li>
+                        <%else%>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <%end%>
                     </ul>
                 </div>
             </div>
@@ -40,21 +44,22 @@
             <div class="caption">
                 <h6>Entra / Busca / Disfruta</h6>
                 <h1>Somos <span>telMo app</span></h1>
-                <%= link_to "Rsgistrate", new_user_registration_path, :class=>"btn btn-transparent" %><%= link_to "Accede", new_user_session_path, :class=>"btn btn-light" %>
+                <%= link_to "Rsgistrate", new_user_registration_path, :class=>"btn btn-transparent" %><%= link_to "Accede", new_user_session_path, :class=>"btn btn-light" %> 
+
             </div>
         </div>
         <div class="item" style="background-image: url(/assets/motel1.jpg)">
             <div class="caption">
                 <h6>Entra / Busca / Disfruta</h6>
                 <h1>para  <span>Moteles</span></h1>
-                <%= link_to "Rsgistrate", new_user_registration_path, :class=>"btn btn-transparent" %><%= link_to "Accede", new_user_session_path, :class=>"btn btn-light" %>
+                <%= link_to "Rsgistrate", new_user_registration_path, :class=>"btn btn-transparent" %><%= link_to "Accede", new_user_session_path, :class=>"btn btn-light" %> 
             </div>
         </div>
         <div class="item" style="background-image: url(/assets/pareja.jpg)">
             <div class="caption">
                 <h6>Entra / Busca / Disfruta</h6>
                 <h1>tambien <span>usuarios</span></h1>
-                <%= link_to "Rsgistrate", new_user_registration_path, :class=>"btn btn-transparent" %><%= link_to "Accede", new_user_session_path, :class=>"btn btn-light" %>
+                <%= link_to "Rsgistrate", new_user_registration_path, :class=>"btn btn-transparent" %><%= link_to "Accede", new_user_session_path, :class=>"btn btn-light" %> 
             </div>
         </div>
     </div>
