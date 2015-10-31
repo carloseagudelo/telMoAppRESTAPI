@@ -14,6 +14,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :Tipo_de_motel %><br />
+    <%= f.collection_select(:type_id, Type.all, :id, :name, {:prompt => 'Seleccione un tipo'}, { :selected => params[:id]}) %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email %>
   </div>
@@ -26,6 +31,11 @@
   <div class="field">
     <%= f.label :Pagina_web_motel %><br />
     <%= f.text_field :URL_WebPage%>
+  </div>
+
+  <div class="field">
+    <%= f.label :Ciudad %><br />
+    <%= f.collection_select(:city_id, City.all, :id, :name, {:prompt => 'Seleccione una Ciudad'}, {:selected => params[:id]}) %>
   </div>
 
   <div class="field">
