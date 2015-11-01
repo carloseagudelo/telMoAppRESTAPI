@@ -105,12 +105,12 @@
                           <% if @minimum_password_length %>
                             <em>(<%= @minimum_password_length %> characters minimum)</em>
                           <% end %><br />  
-                          <%= f.text_field :password, :autocomplete=>"off", :placeholder=>"Contraseña", :class=>"form-first-name form-control", :id=>"form-first-name" %>
+                          <%= f.password_field :password, :autocomplete=>"off", :placeholder=>"Contraseña", :class=>"form-first-name form-control", :id=>"form-first-name" %>
                         </div>
 
                         <div class="form-group">
                           <label class="sr-only" for="form-first-name">Confirmar contraseña</label>
-                          <%= f.text_field :password_confirmation, :autocomplete=>"off", :placeholder=>"Confirmar contraseña", :class=>"form-first-name form-control", :id=>"form-first-name" %>
+                          <%= f.password_field :password_confirmation, :autocomplete=>"off", :placeholder=>"Confirmar contraseña", :class=>"form-first-name form-control", :id=>"form-first-name" %>
                         </div>
 
                         <div class="form-group">
