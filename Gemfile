@@ -31,6 +31,8 @@ gem 'devise'
 #Use for attachment files in folder of the project
 gem 'carrierwave', '~> 0.9'
 
+gem 'foundation-rails', '5.4.5'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

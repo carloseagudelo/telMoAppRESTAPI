@@ -1,69 +1,134 @@
-<h2>Registrate en nuestra platafotma y lanza tu negocio a un mundo de probabilidades</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :Nombre_motel %><br />
-    <%= f.text_field :name, autofocus: true %>
-  </div> 
-
-  <div class="field">
-    <%= f.label :Descripcion_motel %><br />
-    <%= f.text_field :description %>
+<nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Telmo App Registrate</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="top-navbar-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <span class="li-text">
+            Carlos Enrique Agudelo
+          </span> 
+          <a href="#"><strong>Perfiles</strong></a> 
+          <span class="li-text">
+            Aqui mi perfil y mas trabajos 
+          </span> 
+          <span class="li-social">
+            <a href="#"><i class="fa fa-facebook"></i></a> 
+            <a href="#"><i class="fa fa-twitter"></i></a> 
+            <a href="#"><i class="fa fa-envelope"></i></a> 
+            <a href="#"><i class="fa fa-skype"></i></a>
+          </span>
+        </li>
+      </ul>
+    </div>
   </div>
+</nav>
 
-  <div class="field">
-    <%= f.label :Tipo_de_motel %><br />
-    <%= f.collection_select(:type_id, Type.all, :id, :name, {:prompt => 'Seleccione un tipo'}, { :selected => params[:id]}) %>
-  </div>
+        <!-- Top content -->
+<div class="top-content">          
+    <div class="inner-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7 text">
+                    <h1><strong>TelMo App</strong> Formulario de registro</h1>
+                    <div class="description">
+                      <p>
+                        Si tienes un motel y quieres hacer parte de TelMo App registrate y abre tu negocio a un mundo infinito de posibilidades. 
+                        Recuerda que tenemos una app y la puedes descargar en <a href="http://azmind.com"><strong>TelMo App mobile</strong></a>, Donde cualquier usuario podra encontrarte y tomar la decision de consumir tus recursos.
+                      </p>
+                    </div>                           
+                </div>
+                <div class="col-sm-5 form-box">
+                  <div class="form-top">
+                    <div class="form-top-left">
+                      <h3>Resgistrate</h3>
+                        <p>Ingrese la siguiente informacion:</p>
+                    </div>
+                    <div class="form-top-right">
+                      <i class="fa fa-pencil"></i>
+                    </div>
+                    </div>
+                    <div class="form-bottom">
+                      <%= form_for(resource, as: resource_name, url: registration_path(resource_name, :class=>"registration-form")) do |f| %>
+                        <%= devise_error_messages! %>                       
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>
-  </div>
+                        <div class="form-group">
+                          <label class="sr-only" for="form-first-name">Nombre del Motel</label>
+                          <%= f.text_field :name, autofocus: true, :placeholder=>"Nombre de Motel", :class=>"form-first-name form-control", :id=>"form-first-name" %>
+                        </div> 
 
-  <div class="field">
-    <%= f.label :Video_descripcion_motel %><br />
-    <%= f.text_field :URL_Video %>
-  </div>
+                        <div class="form-group">
+                          <label class="sr-only" for="form-first-name">Descripcion del Motel</label>
+                          <%= f.text_field :description, :placeholder=>"Descripcion del Motel", :class=>"form-first-name form-control", :id=>"form-first-name" %>
+                        </div> 
 
-  <div class="field">
-    <%= f.label :Pagina_web_motel %><br />
-    <%= f.text_field :URL_WebPage%>
-  </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="form-first-name">Tipo de motel</label>          
+                            <%= f.collection_select(:type_id, Type.all, :id, :name, {:prompt => 'Seleccione un tipo'}, { :class=>"form-first-name form-control", :selected => params[:id]}) %>
+                        </div>
 
-  <div class="field">
-    <%= f.label :Ciudad %><br />
-    <%= f.collection_select(:city_id, City.all, :id, :name, {:prompt => 'Seleccione una Ciudad'}, {:selected => params[:id]}) %>
-  </div>
+                        <div class="form-group">
+                          <label class="sr-only" for="form-first-name">Correo Electronico del Motel</label>
+                          <%= f.text_field :email, :placeholder=>"Correo Elctronico del Motel", :class=>"form-first-name form-control", :id=>"form-first-name" %>
+                        </div>
 
-  <div class="field">
-    <%= f.label :Direccion %><br />
-    <%= f.text_field :addres %>
-  </div>
+                        <div class="form-group">
+                          <label class="sr-only" for="form-first-name">Video descripcion del Motel</label>
+                          <%= f.text_field :URL_Video, :placeholder=>"Video descripcion del Motel", :class=>"form-first-name form-control", :id=>"form-first-name" %>
+                        </div>
 
-  <div class="field">
-    <%= f.label :Contraseña %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+                        <div class="form-group">
+                          <label class="sr-only" for="form-first-name">Pagina Web del Motel</label>
+                          <%= f.text_field :URL_WebPage, :placeholder=>"Pagina Web del Motel", :class=>"form-first-name form-control", :id=>"form-first-name" %>
+                        </div>
 
-  <div class="field">
-    <%= f.label :Confirmar_contraseña %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="form-first-name">Ciudad</label>          
+                            <%= f.collection_select(:city_id, City.all, :id, :name, {:prompt => 'Seleccione una ciudad'}, { :class=>"form-first-name form-control", :selected => params[:id]}) %>
+                        </div>
 
-  <div class="field">
-    <%= f.label :Imagen_logo %><br />
-    <%= f.file_field :logo %>
-  </div>
+                        <div class="form-group">
+                          <label class="sr-only" for="form-first-name">Dirección</label>
+                          <%= f.text_field :addres, :placeholder=>"Dirección", :class=>"form-first-name form-control", :id=>"form-first-name" %>
+                        </div>
 
-  <div class="actions">
-    <%= f.submit "Registarse" %>
-  </div>
-<% end %>
+                        <div class="form-group">
+                          <label class="sr-only" for="form-first-name">Contraseña</label>
+                          <% if @minimum_password_length %>
+                            <em>(<%= @minimum_password_length %> characters minimum)</em>
+                          <% end %><br />  
+                          <%= f.text_field :password, :autocomplete=>"off", :placeholder=>"Contraseña", :class=>"form-first-name form-control", :id=>"form-first-name" %>
+                        </div>
 
-<%= render "devise/shared/links" %>
+                        <div class="form-group">
+                          <label class="sr-only" for="form-first-name">Confirmar contraseña</label>
+                          <%= f.text_field :password_confirmation, :autocomplete=>"off", :placeholder=>"Confirmar contraseña", :class=>"form-first-name form-control", :id=>"form-first-name" %>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="sr-only" for="form-first-name">Imagen logo</label>
+                          <%= f.file_field :logo, :placeholder=>"Imagen logo", :class=>"form-first-name form-control", :id=>"form-first-name" %>
+                        </div>
+                        
+                        <button type="submit" class="btn">Registrarme</button>
+
+                        <%= render "devise/shared/links" %>
+                                                
+                      <%end%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>            
+</div>
+<%= javascript_include_tag 'devise', 'data-turbolinks-track' => true %>
+
+

@@ -1,26 +1,92 @@
-<h2>Ingresa en la plataforma</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :Correo_electronico %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Contraseña %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me  %>
-      <%= f.label :Recordarme %>
+<nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Telmo App Ingreso</a>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Ingresar" %>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="top-navbar-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <span class="li-text">
+            Carlos Enrique Agudelo
+          </span> 
+          <a href="#"><strong>Perfiles</strong></a> 
+          <span class="li-text">
+            Aqui mi perfil y mas trabajos 
+          </span> 
+          <span class="li-social">
+            <a href="#"><i class="fa fa-facebook"></i></a> 
+            <a href="#"><i class="fa fa-twitter"></i></a> 
+            <a href="#"><i class="fa fa-envelope"></i></a> 
+            <a href="#"><i class="fa fa-skype"></i></a>
+          </span>
+        </li>
+      </ul>
+    </div>
   </div>
-<% end %>
+</nav>
 
-<%= render "devise/shared/links" %>
+        <!-- Top content -->
+<div class="top-content">          
+    <div class="inner-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7 text">
+                    <h1><strong>TelMo App</strong> Formulario de Ingreso</h1>
+                    <div class="description">
+                      <p>
+                        Si tienes un motel y quieres hacer parte de TelMo App registrate y abre tu negocio a un mundo infinito de posibilidades. 
+                        Recuerda que tenemos una app y la puedes descargar en <a href="http://azmind.com"><strong>TelMo App mobile</strong></a>, Donde cualquier usuario podra encontrarte y tomar la decision de consumir tus recursos.
+                      </p>
+                    </div>                           
+                </div>
+                <div class="col-sm-5 form-box">
+                  <div class="form-top">
+                    <div class="form-top-left">
+                      <h3>Ingresa</h3>
+                        <p>Ingrese la siguiente informacion:</p>
+                    </div>
+                    <div class="form-top-right">
+                      <i class="fa fa-pencil"></i>
+                    </div>
+                    </div>
+                    <div class="form-bottom">
+                      <%= form_for(resource, as: resource_name, url: session_path(resource_name, :class=>"registration-form")) do |f| %>
+                        
+                        <div class="form-group">
+                          <label class="sr-only" for="form-first-name">Correo Electronico</label>
+                          <%= f.text_field :email, autofocus: true, :placeholder=>"Correo Electronico", :class=>"form-first-name form-control", :id=>"form-first-name" %>
+                        </div> 
+
+                        <div class="form-group">
+                          <label class="sr-only" for="form-first-name">Contraseña</label>
+                          <%= f.text_field :password, :autocomplete=>"off", :placeholder=>"Contraseña", :class=>"form-first-name form-control", :id=>"form-first-name" %>
+                        </div> 
+
+                        <% if devise_mapping.rememberable? -%>
+                          <div class="form-group">
+                            <%= f.check_box :remember_me %>
+                            <%= f.label :Recordarme %>
+                          </div>
+                        <% end -%>
+                        
+                        <button type="submit" class="btn">Ingresar</button><br />
+
+                        <%= render "devise/shared/links" %>
+                                                
+                      <%end%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>            
+</div>
+<%= javascript_include_tag 'devise', 'data-turbolinks-track' => true %>
+
+
