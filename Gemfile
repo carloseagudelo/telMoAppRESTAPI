@@ -29,7 +29,8 @@ gem 'bootstrap-sass', '~> 3.3.5'
 #Use for managmin of user 
 gem 'devise'
 #Use for attachment files in folder of the project
-gem 'carrierwave', '~> 0.9'
+gem "paperclip"
+gem "paperclip-dropbox", ">= 1.1.7"
 
 gem 'foundation-rails', '5.4.5'
 
