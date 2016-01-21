@@ -34,6 +34,9 @@ gem "paperclip-dropbox", ">= 1.1.7"
 
 gem 'foundation-rails', '5.4.5'
 
+#For cconver the address in coordenadas
+gem 'geocoder'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

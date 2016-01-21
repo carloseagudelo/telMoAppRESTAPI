@@ -9,7 +9,6 @@ class AddNameToUsers < ActiveRecord::Migration
     add_column :users, :form_page, :string
     add_column :users, :addres, :string
     add_reference :users, :type, index: true, foreign_key: true
-    add_reference :users, :city, index: true, foreign_key: true    
-    
+    add_reference :users, :city, index: true, foreign_key: true        
   end
 end
