@@ -14,6 +14,16 @@ class Api::V1::MotelController < ApplicationController
     	end
     end
 
+    def update
+        @motel= User.find(params[:id])
+        @motel.calification = params[:calification] 
+        if @motel.update(motel_params)
+            render json: @motel
+        else
+            render json: null
+        end
+    end
+
 
 private
 
