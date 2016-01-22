@@ -14,11 +14,6 @@ class Api::V1::MotelController < ApplicationController
     	end
     end
 
-    def update
-        @update = User.find(params[:id])
-        @update.calification = @update.calification  + params[:calification]
-        @update.
-    end
 
 private
 
