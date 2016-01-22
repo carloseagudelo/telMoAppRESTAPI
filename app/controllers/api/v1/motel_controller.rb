@@ -14,9 +14,15 @@ class Api::V1::MotelController < ApplicationController
     	end
     end
 
+    def update
+        @update = User.find(params[:id])
+        @update.calification = @update.calification  + params[:calification]
+        @update.
+    end
+
 private
 
     def motel_params
-      params.require(:motel).permit(:id, :email, :name, :description, :URL_WebPage, :URL_Video, :logo, :addres)
+      params.require(:motel).permit(:id, :email, :name, :description, :URL_WebPage, :URL_Video, :logo, :addres, :calification)
     end
 end
