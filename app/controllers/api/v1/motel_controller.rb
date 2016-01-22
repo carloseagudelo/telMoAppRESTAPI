@@ -14,9 +14,13 @@ class Api::V1::MotelController < ApplicationController
     	end
     end
 
+    def index_best
+        respond_with User.all.order(calification: :desc)
+    end
+
     def update
-        @motel= User.find(params[:id])
-        @motel.calification = params[:calification] 
+        @motel= User.find(params[:id])        
+        @motel.calification = @motel.calification + motel_params[:calification] 
         if @motel.update(motel_params)
             render json: @motel
         else
