@@ -28,7 +28,6 @@ class Api::V1::MotelController < ApplicationController
         end
     end
 
-
 private
 
     def motel_params

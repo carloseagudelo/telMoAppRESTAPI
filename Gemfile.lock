@@ -109,6 +109,7 @@ GEM
       paperclip (>= 3.1, < 5)
     pg (0.18.3)
     rack (1.6.4)
+    rack-cors (0.3.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.4)
@@ -194,6 +195,7 @@ DEPENDENCIES
   paperclip
   paperclip-dropbox (>= 1.1.7)
   pg
+  rack-cors (~> 0.3.1)
   rails (= 4.2.4)
   rails_12factor
   responders (~> 2.0)
